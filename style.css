@@ -1,0 +1,282 @@
+*, *::before, *::after {
+Box-sizing: border box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: white;
+}
+
+/* NAV */
+nav {
+}
+nav ul {
+    display: flex; /* or inline-flex */
+    justify-content: space-around;
+    background-color: #4479AF;
+    /*position: fixed;*/
+    color: white;
+    list-style: none;
+    margin: 0em;
+    padding: 0;
+    align-items: center;
+}
+nav ul li {
+    text-align: center;
+    margin: .25em .5em;
+}
+nav ul li a{
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HEADER INDEX */
+body > header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    background: url('afbeeldingen/adult-audience-blur-976863.jpg');
+    background-size:cover;
+    background-position:center;
+    height:50vh;
+    text-align: left;
+}
+
+header section {
+     display: block;
+     flex-wrap: wrap;
+}
+
+/* TITEL HEADER*/
+header h1 {
+    font-size: 4em;
+    color: white;
+    margin:1rem;
+}
+header h2 {
+    font-size: 3em;
+    color: white;
+    margin:1rem;
+}
+header h3 {
+    font-size: 2em;
+    color: white;
+    margin: 1rem;
+}
+
+body > section {
+    display:none;
+}
+body > section.active {
+    display:block;
+}
+
+ul {
+    list-style: none;
+    display: flex; /* or inline-flex */
+    justify-content: space-around;
+    background-color: #4479AF;
+    margin: 0;
+    padding: 1em;
+}
+ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* ARTIESTEN CONTENT */
+
+/*Titel kopjes homepagina*/
+.kopjes {
+    color: #12406e;
+    text-align: center;
+    font-size: 1.6em;
+}
+
+/*concent bij upcoming events en recently added*/
+section {
+    display: flex; /* or inline-flex */
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+section article {
+    display:inline-flex; /* or inline-flex */
+    flex-wrap:wrap;
+    justify-content: flex-end;
+    align-content: flex-end; 
+    margin: 0.5em;
+    height: 20vh;
+    width: 20vw;
+    background-size: cover;
+}
+
+@media (max-width: 40em) {
+    section article {
+        width: 100vw;
+    }
+}
+
+@media (min-width: 40em) and (max-width: 75em) {
+    section article {
+        width: 45vw;
+    }
+}
+
+/*Tekst vlak*/
+article section {
+    display: block;
+    flex-direction: row;
+    background-color: rgb(255,255,255, 0.8);
+    padding: 0.5em;
+    line-height: 0.4em;
+    color: #12406e;
+    width: 13em;
+}
+
+/*concent bij upcoming events en recently added*/
+main section {
+    display: flex; /* or inline-flex */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center; 
+}
+
+main article {
+    display: inline-flex
+; /* or inline-flex */
+    flex-wrap:wrap;
+    justify-content: flex-end;
+    align-content: flex-end; 
+    margin: 0.5em;
+    height: 20vh;
+    width: 20vw;
+    background-size: cover;
+}
+
+main article section {
+    display: block;
+    flex-direction: row;
+    background-color: rgb(255,255,255, 0.8);
+    padding: 0.5em;
+    line-height: 0.4em;
+    color: #12406e;
+    width: 13em;
+}
+
+@media (max-width: 40em) {
+    main article {
+        width: 100vw;
+    }
+}
+
+@media (min-width: 40em) and (max-width: 75em) {
+    main article {
+        width: 45vw;
+    }
+}
+
+.detailinfo {
+    color: darkgrey;
+    margin: 2em;
+    max-width: 60vw;
+}
+
+.vriendenlijst article img {
+    width: 9em;
+    clip-path: circle(65px);
+}
+
+.vriendenlijst {
+    display: flex; /* or inline-flex */
+    flex-wrap: nowrap;
+    justify-content: space-around; 
+}
+
+.vriendenlijst article {
+    display: inline-flex; /* or inline-flex */
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    padding: 0;
+    line-height: 0em;
+}
+
+@media (max-width: 40em) {
+    .vriendenlijst article {
+        margin-bottom: 1em;
+    }
+    .vriendenlijst article img {
+        width: 6em;
+        clip-path: circle(55px);
+    }
+    .detailinfo {
+        max-width: 100vw;
+}
+}
+
+@media (min-width: 40em) and (max-width: 75em) {
+    .vriendenlijst article {
+        margin-bottom: 1em;
+    }
+    .vriendenlijst article img {
+        width: 8em;
+        clip-path: circle(60px);
+    }
+    .detailinfo {
+        max-width: 80vw;
+}
+}
+
+btn {
+    background-color: #4479AF;
+    max-width: 10em;
+    padding: 1em 1em;
+    text-align: center;
+}
+
+btn a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5em;
+}
+
+footer btn {
+    margin: 1em;
+    font-size: 1em;
+}
+
+/* Schema artiesten */
+
+
+
+table {
+    color: darkgray;
+    margin-left: 2.5em;
+    font-size: 1.2em;
+    margin: 2em;
+    text-align: left;
+}
+    
+
+footer {
+    display: inline-flex; /* or inline-flex */
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start; 
+    background-color: black;
+    background-size:cover;
+    height: 10vh;
+    width: 100vw;
+    color: white;
+}
+
+
+
+
