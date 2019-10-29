@@ -1,0 +1,297 @@
+*, *::before, *::after {
+Box-sizing: border box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: white;
+}
+
+h6 {
+    color: white;
+    font-size: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
+/* NAV BOVENIN */
+/* Bron voor flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+/* Bron voor grid: https://css-tricks.com/snippets/css/complete-guide-grid/*/
+
+nav ul {
+    display: flex; /* or inline-flex */
+    justify-content: space-around;
+    background-color: #4479AF;
+    /*position: fixed;*/
+    color: white;
+    list-style: none;
+    margin: 0em;
+    padding: 0;
+    align-items: center;
+}
+nav ul li {
+    text-align: center;
+    margin: .25em .5em;
+}
+nav ul li a{
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HEADER INDEX */
+body > header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    background: url('afbeeldingen/adult-audience-blur-976863.jpg');
+    background-size:cover;
+    background-position:center;
+    height:50vh;
+    text-align: left;
+}
+
+/* TITEL HEADER*/
+header section {
+     display: block;
+     flex-wrap: wrap;
+}
+header h1 {
+    font-size: 4em;
+    color: white;
+    margin:1rem;
+}
+
+ul {
+    list-style: none;
+    display: flex; /* or inline-flex */
+    justify-content: space-around;
+    background-color: #4479AF;
+    margin: 0;
+    padding: 1em;
+}
+ul li a{
+    color: #244566;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/*Actief maken van deze tekst (niet meer gebruikt):
+https://stackoverflow.com/questions/3995524/is-it-possible-to-change-document-activeelement-in-javascript
+https://www.tutorialspoint.com/How-to-change-the-font-color-of-a-text-using-*/
+
+a:active {
+    color: white;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+/* ARTIESTEN CONTENT UPCOMING & RECENT*/
+
+/*Alle titel kopjes homepagina*/
+h2 {
+    color: #12406e;
+    text-align: center;
+    font-size: 1.6em;
+    grid-column: 1/5;
+}
+
+/*Content bij upcoming events en recently added*/
+section#upcoming {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+section#upcoming a {
+    text-decoration: none;
+}
+
+section#upcoming article {
+    margin: 0.5em;
+    height: 30vh;
+    background-size: cover;
+    box-shadow: 0.3em 0.3em 0.3em grey;
+}
+
+section#recent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+section#recent a {
+    text-decoration: none;
+}
+
+section#recent article {
+    margin: 0.5em;
+    height: 30vh;
+    background-size: cover;
+    box-shadow: 0.3em 0.3em 0.3em grey;
+}
+
+/*Tekst vlak*/
+article section {
+    display: block;
+    flex-direction: row;
+    background-color: rgb(255,255,255, 0.8);
+    padding: 0.5em;
+    line-height: 0.4em;
+    color: #12406e;
+    width: 13em;
+    margin-bottom: 7em;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+main a {
+    text-decoration: none;
+}
+
+/*concent bij upcoming events en recently added*/
+main article {
+    margin: 0.5em;
+    height: 30vh;
+    background-size: cover;
+    box-shadow: 0.3em 0.3em 0.3em grey;
+}
+
+/*Voor mobiele versie*/
+/*Bron media queries: uitleg andere studenten*/
+@media (max-width: 35em) {
+    h2 {
+    grid-column: 1/2;
+    }
+    section#upcoming {
+    display: grid;
+    grid-template-columns: 1fr;
+    }
+    section#recent {
+    display: grid;
+    grid-template-columns: 1fr;
+    }
+    main {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+}
+
+/*Voor tablet versie 2 op rij*/
+@media (min-width: 35em) and (max-width: 55em) {
+    h2 {
+    grid-column: 1/3;
+    }
+    section#upcoming {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    }
+    section#recent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    }
+    main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+/*Voor tablet versie 3 op rij*/
+@media (min-width: 55em) and (max-width: 75em) {
+    h2 {
+    grid-column: 1/4;
+    }
+    section#upcoming {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+    section#recent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+    main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+}
+
+/*MENU UPCOMING EN RECENT*/
+/* Upcoming events en recently added*/
+body > section {
+    display:none;   
+}
+body > section.active {
+    display:block;
+}
+
+/* FOOTER */
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-image: url(afbeeldingen/Footerimg.png);
+    margin-bottom: 0;
+    background-size: cover;
+}
+footer header {
+    display: grid;
+    text-align: center;
+}
+
+footer p{
+    color: white;
+    margin: 1.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    font-size: 1em;
+}
+footer section p {
+    color: white;
+    font-size: 2em;
+}
+
+
+/* FORMULIER */
+footer form p {
+    margin: 0em 0em 0.5em 0em;
+    text-align: center;
+}
+footer form {
+    display: grid;
+    margin: 1em 5em 1em 5em;
+    color: white;
+}
+
+
+/* BUTTON */
+
+footer btn {
+    background-color: #4479AF;
+    padding: 1em;
+    margin: 1.2em;
+    text-align: center;
+    max-width: 10em;
+}
+footer btn a {
+    text-decoration: none;
+    color: white;
+}
+
+footer btn:hover {
+    background-color: #36526e
+}
+
+/*Hover greyscale image (niet meer gebruikt alleen voor de hover)
+https://stackoverflow.com/questions/7273927/image-greyscale-with-css-re-color-on-mouse-over
+*/
+
+/*Probleem gehad met grid die niet goed wou staan (maar ik zag me eigen fout al in de code):
+https://stackoverflow.com/questions/46147528/css-grid-layout-changing-column-width-with-javascript
+https://www.qtcentre.org/threads/35961-How-to-call-a-javascript-function-without-the-trigger-of-any-event-in-a-grid
+https://stackoverflow.com/questions/50228696/why-is-css-grid-not-working*/
