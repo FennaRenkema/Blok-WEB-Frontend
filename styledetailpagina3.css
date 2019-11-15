@@ -1,0 +1,340 @@
+*, *::before, *::after {
+Box-sizing: border box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: white;
+}
+
+/* NAV BOVENIN */
+/* Bron voor flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+/* Bron voor grid: https://css-tricks.com/snippets/css/complete-guide-grid/*/
+
+nav ul {
+    display: flex; /* or inline-flex */
+    justify-content: space-around;
+    background-color: #4479AF;
+    /*position: fixed;*/
+    color: white;
+    list-style: none;
+    margin: 0em;
+    padding: 0;
+    align-items: center;
+}
+nav ul li {
+    text-align: center;
+    margin: .25em .5em;
+}
+nav ul li a{
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:focus {
+    color: #244566;
+}
+
+/* HEADER INDEX */
+body > header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    background: url('afbeeldingen/adult-audience-blur-976863.jpg');
+    background-size:cover;
+    background-position:center;
+    height:50vh;
+    text-align: left;
+}
+
+/* TITEL HEADER*/
+header section {
+    display: block;
+    flex-wrap: wrap;
+    margin-left: 4em;
+}
+header h1 {
+    font-size: 4em;
+    color: white;
+    margin: 1rem;
+}
+header h2 {
+    font-size: 3em;
+    color: white;
+    margin:1rem;
+}
+header h3 {
+    font-size: 2em;
+    color: white;
+    margin: 1rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-right: 5em;
+    margin-left: 5em;
+    margin-top: 1.5em;
+    margin-bottom: 5em;
+}
+
+/*Alle titel kopjes homepagina*/
+main h4 {
+    color: darkgray;
+    text-align: left;
+    font-size: 2em;
+    margin: 0;
+}
+
+main article#maintext {
+    color: darkgrey;
+    background-size: cover;
+    grid-column: 1/3;
+    margin-right: 15em;
+    margin-bottom: 2em;
+}
+
+main article#maintext p {
+    font-size: 1.5em;
+}
+
+/* MAIN VRIENDENLIJST */
+main article#vrienden h5{
+    color: darkgrey;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 1.3em;
+}
+
+#vriendenlijst {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: darkgrey;
+    text-align: center;
+    font-size: 1.1em;
+}
+#vriendenlijst article img{
+    width: 10em;
+    clip-path: circle(75px);
+}
+
+/* STYLING KNOP TICKETS */
+#knop {
+    background-color: #4479AF;
+    padding: 0.8em;
+    color: white;
+    font-size: 1.6em;
+    border-radius: 0.2em;
+    position: relative;
+    
+}
+#knop:hover {
+    background-color: #36526e;
+}
+
+/* SCHEMA */
+article.schema h6 {
+    color: darkgrey;
+    font-size: 2em;
+    margin-bottom: 0.3em;
+    margin-top: 0;
+}
+table {
+    color: darkgrey;
+}
+table th {
+    text-align: left;
+    font-size: 1.7em;
+    padding-right: 8em;
+}
+table td {
+    font-size: 1.5em;
+}
+
+
+/*Voor mobiele versie*/
+/*Bron media queries: uitleg andere studenten*/
+@media (max-width: 40em) {
+   main {
+        grid-template-columns: 1fr;
+        margin-right: 2em;
+        margin-left: 2em;
+        margin-top: 1.5em;
+        margin-bottom: 5em;
+    }
+    main article#maintext {
+        grid-column: 1/2;
+        margin-right: 0;
+    }
+    main article#maintext p {
+        font-size: 1.3em;
+    }
+    #vriendenlijst {
+        grid-template-columns: 1fr 1fr;
+    }
+    #vriendenlijst article img{
+        width: 8em;
+        clip-path: circle(65px);
+    }
+    table td {
+        font-size: 1.3em;
+    }
+    table th {
+        padding-right: 5em;
+    }
+}
+
+/*Voor kleinere tablet versie*/
+/*Bron media queries: uitleg andere studenten*/
+@media (min-width: 40em) and (max-width: 60em) {
+   main {
+        grid-template-columns: 1fr;
+    }
+    main article#maintext {
+        grid-column: 1/2;
+        margin-right: 0;
+    }
+    main article#maintext p {
+        font-size: 1.3em;
+    }
+    #vriendenlijst {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    #vriendenlijst article img{
+        width: 8em;
+        clip-path: circle(55px);
+    }
+    table th {
+        padding-right: 5em;
+    }
+    table td {
+        font-size: 1.3em;
+    }
+}
+
+/*Voor tablet versie*/
+/*Bron media queries: uitleg andere studenten*/
+@media (min-width: 60em) and (max-width: 75em) {
+   main {
+        grid-template-columns: 1fr;
+    }
+    main article#maintext {
+        grid-column: 1/2;
+        margin-right: 0;
+    }
+    main article#maintext p {
+        font-size: 1.5em;
+    }
+    #vriendenlijst {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        font-size: 1.3em;
+    }
+    #vriendenlijst article img{
+        width: 10em;
+        clip-path: circle(85px);
+    }
+    table th {
+        padding-right: 5em;
+    }
+}
+
+
+/* FOOTER */
+h6 {
+    color: white;
+    font-size: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-image: url(afbeeldingen/Footerimg.png);
+    margin-bottom: 0;
+    background-size: cover;
+}
+footer header {
+    display: grid;
+    text-align: center;
+}
+
+footer p{
+    color: white;
+    font-size: 1.2em;
+    max-width: 22em;
+    text-align:center;
+    margin:0 auto;
+}
+
+/* FORMULIER */
+footer form {
+    display: grid;
+    color: white;
+    font-size: 1.2em;
+    min-width: 40vw;
+    max-width: 40vw;
+    align-content: center;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+footer form label {
+    margin-bottom: 0.4em;
+    margin-top: 0.4em;
+}
+
+/* BUTTON */
+
+#footerknop {
+    display: grid;
+    background-color: #4479AF;
+    padding: 1em;
+    color: white;
+    font-size: 1em;
+    border-radius: 0.2em;
+    border-style: none;
+    margin: 0 auto;
+    align-content: center;
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+
+#footerknop:hover {
+    background-color: #36526e;
+}
+
+@media (max-width: 40em) {
+    form {
+        min-width: 70vw;
+        max-width: 70vw;
+    }
+    .formshow {
+        min-width: 70vw;
+        max-width: 70vw;
+    }
+    
+}
+
+@media (min-width: 40em) and (max-width: 60em) {
+    form {
+        min-width: 60vw;
+        max-width: 60vw;
+    }
+    .formshow {
+        min-width: 60vw;
+        max-width: 60vw;
+    }
+}
+
+
+/*Hover greyscale image (niet meer gebruikt alleen voor de hover)
+https://stackoverflow.com/questions/7273927/image-greyscale-with-css-re-color-on-mouse-over
+*/
+
+/*Probleem gehad met grid die niet goed wou staan (maar ik zag me eigen fout al in de code):
+https://stackoverflow.com/questions/46147528/css-grid-layout-changing-column-width-with-javascript
+https://www.qtcentre.org/threads/35961-How-to-call-a-javascript-function-without-the-trigger-of-any-event-in-a-grid
+https://stackoverflow.com/questions/50228696/why-is-css-grid-not-working*/

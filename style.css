@@ -1,0 +1,432 @@
+*, *::before, *::after {
+Box-sizing: border box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: white;
+}
+
+/* NAV BOVENIN */
+/* Bron voor flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+/* Bron voor grid: https://css-tricks.com/snippets/css/complete-guide-grid/*/
+
+nav ul {
+    display: flex; /* or inline-flex */
+    justify-content: space-around;
+    background-color: #4479AF;
+    /*position: fixed;*/
+    color: white;
+    list-style: none;
+    margin: 0em;
+    padding: 0;
+    align-items: center;
+}
+nav ul li {
+    text-align: center;
+    margin: .25em .5em;
+}
+nav ul li a{
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:focus {
+    color: #244566;
+}
+
+/*HEADER*/
+body > header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    background: url('afbeeldingen/adult-audience-blur-976863.jpg');
+    background-size:cover;
+    background-position:center;
+    height:50vh;
+    text-align: left;
+}
+
+/*TITEL HEADER*/
+header section {
+     display: block;
+     flex-wrap: wrap;
+}
+header h1 {
+    font-size: 4em;
+    color: white;
+    margin:1rem;
+}
+
+ul {
+    list-style: none;
+    display: flex; /* or inline-flex */
+    justify-content: space-around;
+    margin: 0;
+    padding: 1em;
+    background-color: #4479AF;
+}
+ul li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/*Bewegende laad balkje onder de kopjes upcoming en recent*/
+#container {
+  width: 60vw;
+  height: 1vh;
+  background: white;
+}
+
+#balkje {
+  width: 20vw;
+  height: 1vh;
+  position: absolute;
+  background-color: #4479AF;
+}
+
+.uit {
+  display: none;
+  position: absolute;
+}
+
+.schuiven {
+    margin-top: 3.5em;
+    position: absolute;
+    padding-bottom: 0.5em;
+    margin-left: -20em
+}
+
+/*Actief maken van deze tekst (niet meer gebruikt):
+https://stackoverflow.com/questions/3995524/is-it-possible-to-change-document-activeelement-in-javascript
+https://www.tutorialspoint.com/How-to-change-the-font-color-of-a-text-using-*/
+
+
+ul li a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+ul li a:focus {
+    color: lightskyblue;
+    font-size: 1.5em;
+}
+
+/*ARTIESTEN CONTENT UPCOMING & RECENT*/
+
+/*Achtergrond voor elk evenement door id*/
+#fathersjon {
+    background-image: url(afbeeldingen/adults-audience-band-167517.jpg)
+}
+
+#nicolasjaar {
+    background-image: url(afbeeldingen/adult-band-concert-995301.jpg);
+}
+
+#editors {
+    background-image: url(afbeeldingen/adult-agriculture-festival-194080.jpg);
+}
+
+#ragnbone {
+    background-image: url(afbeeldingen/applause-audience-band-167636.jpg);
+}
+
+#gracejones {
+    background-image: url(afbeeldingen/black-and-white-concert-festival-210922.jpg);
+}
+
+#neneh {
+    background-image: url(afbeeldingen/pexels-photo-1309240.jpeg);  
+}
+
+#fleetfoxes {
+    background-image: url(afbeeldingen/adult-applause-audience-952437.jpg);
+}
+
+#flume {
+    background-image: url(afbeeldingen/audience-celebration-clouds-920888.jpg);
+}
+
+.actief {
+    display: grid;
+}
+
+.nonactief {
+    display: none;
+}
+
+/*Alle titel kopjes homepagina*/
+h2 {
+    color: #12406e;
+    text-align: center;
+    font-size: 1.6em;
+    grid-column: 1/5;
+}
+
+/*Content bij upcoming events en recently added*/
+section#upcoming {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+section#upcoming a {
+    text-decoration: none;
+}
+
+section#upcoming article {
+    margin: 0.5em;
+    max-height: 45vh;
+    background-size: cover;
+    box-shadow: 0.3em 0.3em 0.3em grey;
+}
+
+/*Bronnen grijskleuren foto: https://css-tricks.com/almanac/properties/t/transition/
+https://codepen.io/Fenna/pen/JjjmLRp*/
+
+section#upcoming article:hover {
+    filter: grayscale(100%); 
+    -webkit-transition: filter 1s ease-in;
+    -moz-transition: filter 1s ease-in;
+    -o-transition: filter 1s ease-in;
+    transition: filter 1s ease-in;
+}
+
+.teksthover {
+    color: white;
+    background-color: dimgrey;
+}
+
+section#recent {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+section#recent a {
+    text-decoration: none;
+}
+
+section#recent article {
+    margin: 0.5em;
+    max-height: 45vh;
+    background-size: cover;
+    box-shadow: 0.3em 0.3em 0.3em grey;
+}
+
+section#recent article:hover {
+    filter: grayscale(100%); 
+    -webkit-transition: filter 1s ease-in;
+    -moz-transition: filter 1s ease-in;
+    -o-transition: filter 1s ease-in;
+    transition: filter 1s ease-in;
+}
+
+
+/*Tekst vlak in de evenementen*/
+article section {
+    display: block;
+    flex-direction: row;
+    background-color: rgb(255,255,255, 0.8);
+    padding: 0.5em;
+    line-height: 0.4em;
+    color: #12406e;
+    width: 13em;
+    margin-bottom: 7em;
+}
+
+.teksthover {
+    color: white;
+    background-color: dimgrey;
+}
+
+/*Concent bij main evenementen*/
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 2em;
+}
+
+#neneh {
+    grid-column: span 2;
+}
+
+main a {
+    text-decoration: none;
+}
+
+main article {
+    margin: 0.5em;
+    max-height: 45vh;
+    background-size: cover;
+    box-shadow: 0.3em 0.3em 0.3em grey;
+}
+
+main article:hover {
+    filter: grayscale(100%); 
+    -webkit-transition: filter 1s ease-in;
+    -moz-transition: filter 1s ease-in;
+    -o-transition: filter 1s ease-in;
+    transition: filter 1s ease-in;
+}
+
+/*Voor mobiele versie voor alle content op de pagina*/
+/*Bron media queries: uitleg andere studenten*/
+@media (max-width: 35em) {
+    h2 {
+        grid-column: 1/2;
+    }
+    section#upcoming {
+        grid-template-columns: 1fr;
+    }
+    section#recent {
+        grid-template-columns: 1fr;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    #neneh {
+        grid-column: 1/2;
+    }
+}
+
+/*Voor tablet versie 2 op rij voor alle content op de pagina*/
+@media (min-width: 35em) and (max-width: 55em) {
+    h2 {
+        grid-column: 1/3;
+    }
+    section#upcoming {
+        grid-template-columns: 1fr 1fr;
+    }
+    section#recent {
+        grid-template-columns: 1fr 1fr;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }  
+    #gracejones{
+        grid-column: span 2 ;
+    }
+    #neneh {
+        grid-column: span 1;
+    }
+}
+
+/*Voor tablet versie 3 op rij voor alle content op de pagina*/
+@media (min-width: 55em) and (max-width: 75em) {
+    h2 {
+        grid-column: 1/3;
+    }
+    main h2 {
+        grid-column: 1/4;
+    }
+    section#upcoming {
+        grid-template-columns: 1fr 1fr;
+    }
+    section#recent {
+        grid-template-columns: 1fr 1fr;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #neneh{
+        grid-column: span 2 ;
+    }
+}
+
+/* Nieuwe bronnen gebruikt voor het grid, niet alles gebruikt 
+https://blogs.igalia.com/mrego/2016/05/27/css-grid-layout-and-positioned-items/
+https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow
+https://learncssgrid.com/
+https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/*/
+
+/* FOOTER */
+h4 {
+    color: white;
+    font-size: 2em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-image: url(afbeeldingen/Footerimg.png);
+    margin-bottom: 0;
+    background-size: cover;
+}
+footer header {
+    display: grid;
+    text-align: center;
+}
+
+footer p{
+    color: white;
+    font-size: 1.2em;
+    max-width: 22em;
+    text-align:center;
+    margin:0 auto;
+}
+
+/* FORMULIER */
+footer form {
+    display: grid;
+    color: white;
+    font-size: 1.2em;
+    min-width: 40vw;
+    max-width: 40vw;
+    align-content: center;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+footer form label {
+    margin-bottom: 0.4em;
+    margin-top: 0.4em;
+}
+
+/* BUTTON ARTIEST TIPPEN */
+#footerknop {
+    display: grid;
+    background-color: #4479AF;
+    padding: 1em;
+    color: white;
+    font-size: 1em;
+    border-radius: 0.2em;
+    border-style: none;
+    margin: 0 auto;
+    align-content: center;
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+
+#footerknop:hover {
+    background-color: #36526e;
+}
+
+/*Mobiele versie*/
+@media (max-width: 40em) {
+    footer form {
+        min-width: 70vw;
+        max-width: 70vw;
+    }
+}
+
+/*Tablet versie*/
+@media (min-width: 40em) and (max-width: 60em) {
+    footer form {
+        min-width: 60vw;
+        max-width: 60vw;
+    }
+}
+
+/*Overige Bronnen:
+Probleem gehad met grid die niet goed wou staan (maar ik zag me eigen fout al in de code):
+https://stackoverflow.com/questions/46147528/css-grid-layout-changing-column-width-with-javascript
+https://www.qtcentre.org/threads/35961-How-to-call-a-javascript-function-without-the-trigger-of-any-event-in-a-grid
+https://stackoverflow.com/questions/50228696/why-is-css-grid-not-working
+https://css-tricks.com/where-lines-break-is-complicated-heres-all-the-related-css-and-html/
+https://stackoverflow.com/questions/21245541/min-and-max-width-mess-up-text-align-center*/
